@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".scannerPage">
+
+<com.budiyev.android.codescanner.CodeScannerView
+    android:id="@+id/scannerView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:frameAspectRatioHeight="1"
+    app:frameAspectRatioWidth="1"
+    app:frameColor="@android:color/white"
+    app:frameCornersRadius="12dp"
+    app:frameCornersSize="50dp"
+    app:frameSize="0.75"
+    app:frameThickness="2dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:maskColor="#77000000" >
+
+</com.budiyev.android.codescanner.CodeScannerView>
+
+    <TextView
+        android:id="@+id/resultQR"
+        android:layout_width="175dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="554dp"
+        android:gravity="center_horizontal"
+        android:text=""
+        android:textColor="#FFEB3B"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</RelativeLayout>
