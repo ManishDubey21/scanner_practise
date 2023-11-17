@@ -183,7 +183,7 @@ class SendReceive (
                             out.close()
                             synchronized(photoDownloaded) {
                                 photoDownloaded.append(downloadingMediaFile.absolutePath)
-                                photoDownloaded.notifyAll()
+                            //    photoDownloaded.notifyAll()   ------------------------------------------
                             }
                             Log.v("Connected", "Photo arrived:$photoDownloaded")
                         }
@@ -317,7 +317,7 @@ class SendReceive (
                 synchronized(photoDownloaded) {
                     while (photoDownloaded.length==0)
                         try {
-                            photoDownloaded.wait()
+                           // photoDownloaded.wait() ------------------------------------------
                         }catch (e: InterruptedException) {
                             e.printStackTrace()
                         }

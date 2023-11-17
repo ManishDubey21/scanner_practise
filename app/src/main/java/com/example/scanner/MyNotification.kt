@@ -24,7 +24,7 @@ object MyNotification {
         intent.type = "image/*"
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         val pendingIntent =
-            PendingIntent.getActivity(context, 0, intent, 0)
+            PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_IMMUTABLE)
         return pendingIntent
     }
 // Creates a notification to indicate that the media has been downloaded successfully and can be viewed by clicking on the gallery.
@@ -45,8 +45,8 @@ fun getDownloadNotification(context: Context, path: String): Notification {
  * @return
  */
 fun serviceIntent(context: Context): PendingIntent {
-    val broadcastIntent = Intent(context, Notificationreceiver::class.java)
-    broadcastIntent.putExtra("disconnectedness", "si")
+    val broadcastIntent = Intent(context, NotificationReceiver::class.java)
+    broadcastIntent.putExtra("disconnected", "yes")
     return PendingIntent.getBroadcast(context, 0, broadcastIntent, PendingIntent.FLAG_UPDATE_CURRENT)
 }
 
